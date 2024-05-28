@@ -1,0 +1,222 @@
+:root {
+  --clr-dark-slate-grey: hsl(234, 29%, 20%);
+  --clr-charcoal-grey: hsl(235, 18%, 26%);
+  --clr-grey: hsl(231, 7%, 60%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-tomato: hsl(4, 100%, 67%);
+  --clr-tomato-error: hsla(4, 100%, 67%, 0.15);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  line-height: 1.2;
+  font-family: "Roboto", sans-serif;
+}
+
+.btn-primary {
+  border: none;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 2rem 0 1.7rem 0;
+  width: 100%;
+  color: var(--clr-white);
+  background-color: var(--clr-dark-slate-grey);
+  transition: ease 200ms;
+}
+
+.btn-primary:hover {
+  background-color: var(--clr-tomato);
+  box-shadow: 0px 20px 50px 0px hsla(4, 100%, 67%, 0.5);
+}
+
+.text-base {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--clr-charcoal-grey);
+}
+
+.heading-lg {
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: -0.015rem;
+  color: var(--clr-dark-slate-grey);
+  line-height: 1;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: var(--clr-charcoal-grey);
+}
+
+/* SUBSCRIPTION WRAPPER */
+
+.subscription-wrapper {
+  background-color: var(--clr-white);
+  max-width: 92.8rem;
+  width: 100%;
+}
+.subscription-wrapper.hide {
+  display: none;
+}
+
+/* SUBSCRIPTION HERO */
+
+.subscription-hero {
+  width: 100%;
+  height: 28.4rem;
+}
+.subscription-hero .desktop {
+  display: none;
+}
+.subscription-hero .mobile {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+/* SUBSCRIPTION CONTENT */
+
+.subscription-content {
+  padding: 3.6rem 2.4rem 4rem 2.4rem;
+  max-width: 41.6rem;
+  width: 100%;
+}
+.subscription-content > p {
+  margin-top: 2.4rem;
+  max-width: 43ch;
+}
+.subscription-content ul {
+  padding: 0;
+  margin: 2.4rem 0 4.3rem 0;
+}
+.subscription-content ul li {
+  display: flex;
+}
+.subscription-content ul li img {
+  margin-right: 1.6rem;
+  height: min-content;
+}
+.subscription-content ul li img {
+  margin-top: 0.2rem;
+}
+.subscription-content ul > *:not(:first-child) {
+  margin-top: 1rem;
+}
+
+/* SUBSCRIPTION FORM */
+
+.subscription-form label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--clr-dark-slate-grey);
+  width: 100%;
+}
+.subscription-form span {
+  display: none;
+  color: var(--clr-tomato);
+  float: right;
+}
+.subscription-form input {
+  border-radius: 0.8rem;
+  margin: 1rem 0 2.4rem 0;
+  padding: 1.7rem 2.3rem 1.8rem 2.3rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  width: 100%;
+  border: 1px solid var(--clr-grey);
+  outline: none;
+  background-color: transparent;
+}
+.subscription-form.error label span {
+  display: block;
+}
+.subscription-form.error input {
+  background-color: var(--clr-tomato-error);
+  border-color: var(--clr-tomato);
+  color: var(--clr-tomato);
+}
+.subscription-form:focus {
+  border-color: var(--clr-dark-slate-grey);
+}
+
+/* MESSAGE CARD */
+
+.message-card {
+  background-color: var(--clr-white);
+  width: 100%;
+  min-height: 100vh;
+  padding: 14.9rem 2.4rem 4rem 2.4rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.message-card.show {
+  display: flex;
+}
+.message-card p {
+  margin: 2rem 0 4.3rem 0;
+}
+.message-card h2 {
+  margin-top: 4rem;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    align-items: center;
+  }
+  .heading-lg {
+    font-size: 4.8rem;
+  }
+  .message-card {
+    width: 50.4rem;
+    border-radius: 3.6rem;
+    padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+    min-height: max-content;
+  }
+  .subscription-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    border-radius: 3.6rem;
+    padding: 2.4rem;
+    max-height: 64.1rem;
+  }
+  .subscription-hero {
+    object-fit: contain;
+    max-width: 40rem;
+    height: 100%;
+  }
+  .subscription-hero .mobile {
+    display: none;
+  }
+  .subscription-hero .desktop {
+    display: block;
+  }
+  .subscription-content {
+    padding: 6.6rem 2.4 0 2.4rem;
+  }
+}
+
+@media only screen and (min-width: 912px) {
+  .subscription-content {
+    padding: 7.2rem 0 0 3.9rem;
+  }
+  .heading-lg {
+    font-size: 5.6rem;
+  }
+}

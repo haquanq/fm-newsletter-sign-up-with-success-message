@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+  </head>
+  <body>
+    <div class="subscription-wrapper">
+      <picture class="subscription-hero">
+        <img
+          class="mobile"
+          src="./images/illustration-sign-up-mobile.svg"
+          alt="illustration-sign-up-mobile"
+        />
+        <img
+          class="desktop"
+          src="./images/illustration-sign-up-desktop.svg"
+          alt="illustration-sign-up-desktop"
+        />
+      </picture>
+
+      <section class="subscription-content">
+        <h2 class="heading-lg">Stay updated!</h2>
+        <p class="text-base">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <ul>
+          <li>
+            <img src="./images/icon-list.svg" alt="list-item-icon" />
+            <p class="text-base">Product discovery and building what matters</p>
+          </li>
+          <li>
+            <img src="./images/icon-list.svg" alt="list-item-icon" />
+            <p class="text-base">Measuring to ensure updates are a success</p>
+          </li>
+          <li>
+            <img src="./images/icon-list.svg" alt="list-item-icon" />
+            <p class="text-base">And much more!</p>
+          </li>
+        </ul>
+
+        <form class="subscription-form" action="#">
+          <label for="email-input"
+            >Email address
+            <span id="email-input-error">Valid email required</span></label
+          >
+          <input type="email" name="email-address-input" id="email-input" />
+          <button class="btn-primary" type="submit">
+            Subscribe to monthly newsletter
+          </button>
+        </form>
+      </section>
+    </div>
+
+    <div class="message-card">
+      <section>
+        <img src="./images/icon-success.svg" alt="icon-success" />
+
+        <h2 class="heading-lg">Thanks for<br />subscribing!</h2>
+        <p class="text-base">
+          A confirmation email has been sent to <b>ash@loremcompany.com</b>.
+          Please open it and click the button inside to confirm your
+          subscription.
+        </p>
+      </section>
+      <button class="btn-primary btn-dismiss" type="button">
+        Dismiss message
+      </button>
+    </div>
+
+    <script>
+      /// -------------------------SCRIPT-------------------------------
+      const emailInput = document.querySelector("#email-input");
+      const form = document.querySelector(".subscription-form");
+
+      const subscriptionCard = document.querySelector(".subscription-wrapper");
+      const messageCard = document.querySelector(".message-card");
+      const btnDismiss = document.querySelector(".btn-dismiss");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        subscriptionCard.classList.add("hide");
+        messageCard.classList.add("show");
+        emailInput.value = "";
+      });
+
+      emailInput.addEventListener("invalid", (e) => {
+        e.preventDefault();
+        emailInput.blur();
+        form.classList.add("error");
+      });
+
+      emailInput.addEventListener("focus", (e) => {
+        form.classList.remove("error");
+      });
+
+      btnDismiss.addEventListener("click", () => {
+        subscriptionCard.classList.remove("hide");
+        messageCard.classList.remove("show");
+      });
+    </script>
+  </body>
+</html>
