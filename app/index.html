@@ -7,7 +7,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./assets/images/favicon-32x32.png"
+      href="./assets/favicon-32x32.png"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="./main.css" />
     <title>
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
@@ -23,15 +23,15 @@
   <body>
     <div class="subscription-wrapper">
       <picture class="subscription-hero">
-        <img
-          class="mobile"
-          src="./images/illustration-sign-up-mobile.svg"
-          alt="illustration-sign-up-mobile"
+        <source
+          class="desktop"
+          srcset="./assets/illustration-sign-up-desktop.svg"
+          media="(min-width: 768px)"
         />
         <img
-          class="desktop"
-          src="./images/illustration-sign-up-desktop.svg"
-          alt="illustration-sign-up-desktop"
+          class="mobile"
+          src="./assets/illustration-sign-up-mobile.svg"
+          alt="illustration-sign-up-mobile"
         />
       </picture>
 
@@ -42,15 +42,15 @@
         </p>
         <ul>
           <li>
-            <img src="./images/icon-list.svg" alt="list-item-icon" />
+            <img src="./assets/icon-list.svg" alt="list-item-icon" />
             <p class="text-base">Product discovery and building what matters</p>
           </li>
           <li>
-            <img src="./images/icon-list.svg" alt="list-item-icon" />
+            <img src="./assets/icon-list.svg" alt="list-item-icon" />
             <p class="text-base">Measuring to ensure updates are a success</p>
           </li>
           <li>
-            <img src="./images/icon-list.svg" alt="list-item-icon" />
+            <img src="./assets/icon-list.svg" alt="list-item-icon" />
             <p class="text-base">And much more!</p>
           </li>
         </ul>
@@ -75,7 +75,7 @@
 
     <div class="message-card">
       <section>
-        <img src="./images/icon-success.svg" alt="icon-success" />
+        <img src="./assets/icon-success.svg" alt="icon-success" />
 
         <h2 class="heading-lg">Thanks for<br />subscribing!</h2>
         <p class="text-base">
@@ -89,36 +89,6 @@
       </button>
     </div>
 
-    <script>
-      /// -------------------------SCRIPT-------------------------------
-      const emailInput = document.querySelector("#email-input");
-      const form = document.querySelector(".subscription-form");
-
-      const subscriptionCard = document.querySelector(".subscription-wrapper");
-      const messageCard = document.querySelector(".message-card");
-      const btnDismiss = document.querySelector(".btn-dismiss");
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        subscriptionCard.classList.add("hide");
-        messageCard.classList.add("show");
-        emailInput.value = "";
-      });
-
-      emailInput.addEventListener("invalid", (e) => {
-        e.preventDefault();
-        emailInput.blur();
-        form.classList.add("error");
-      });
-
-      emailInput.addEventListener("focus", (e) => {
-        form.classList.remove("error");
-      });
-
-      btnDismiss.addEventListener("click", () => {
-        subscriptionCard.classList.remove("hide");
-        messageCard.classList.remove("show");
-      });
-    </script>
+    <script type="text/javascript" src="./main.js"></script>
   </body>
 </html>

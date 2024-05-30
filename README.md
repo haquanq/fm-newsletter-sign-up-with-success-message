@@ -17,11 +17,36 @@ Users should be able to:
 
 ### Solution
 
-- [Solution Link]()
-- [Live Site Link]()
+- Built with: `HTML` `CSS`
 
-![](./design/desktop-preview.jpg)
+[`Solution Link`](https://www.frontendmentor.io/solutions/only-html-and-css-pgeog7x0Sw) [`Live Site Link`](https://haquanq.github.io/fm-newsletter-sign-up-with-success-message/)
 
-### Built with
+![](./.docs/design/desktop-design.jpg)
 
-- HTML & CSS
+## Working in `fm-newsletter-sign-up-with-success-message` repository
+
+### Packages being used
+
+- [`browser-sync`](https://github.com/BrowserSync/browser-sync)
+
+### Clone this project to your machine
+
+Make sure you have Git installed in your system, open new terminal, run the following command:
+
+```
+git clone https://github.com/haquanq/fm-newsletter-sign-up-with-success-message.git
+```
+
+Then, run `npm install` to install all dependencies.
+
+```
+npm install
+```
+
+### Development workflow
+
+In terminal, run `npm run dev` to start development server:
+
+```
+npm run dev
+```

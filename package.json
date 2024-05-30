@@ -1,0 +1,12 @@
+{
+  "name": "fm-newsletter-sign-up-with-success-message",
+  "description": "Solution for frontendmentor.io challenge: newsletter-sign-up-with-success-message",
+  "devDependencies": {
+    "browser-sync": "^3.0.2"
+  },
+  "scripts": {
+    "dev": "browser-sync start -s app -f app --no-ui"
+  },
+  "author": "haquanq",
+  "license": "MIT"
+}
