@@ -1,6 +1,6 @@
-const emailInput = document.querySelector("#email-input");
 const form = document.querySelector(".subscription__form");
 
+const emailInput = document.querySelector("#email-input");
 const subscriptionCard = document.querySelector(".subscription");
 const messageCard = document.querySelector(".appreciation");
 const btnDismiss = document.querySelector(".appreciation__dismiss");
