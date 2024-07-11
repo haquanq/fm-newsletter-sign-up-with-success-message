@@ -1,28 +1,28 @@
 const emailInput = document.querySelector("#email-input");
-const form = document.querySelector(".subscription-form");
+const form = document.querySelector(".subscription__form");
 
-const subscriptionCard = document.querySelector(".subscription-wrapper");
-const messageCard = document.querySelector(".message-card");
-const btnDismiss = document.querySelector(".btn-dismiss");
+const subscriptionCard = document.querySelector(".subscription");
+const messageCard = document.querySelector(".appreciation");
+const btnDismiss = document.querySelector(".appreciation__dismiss");
 
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  subscriptionCard.classList.add("hide");
-  messageCard.classList.add("show");
-  emailInput.value = "";
+    e.preventDefault();
+    subscriptionCard.classList.add("hide");
+    messageCard.classList.add("show");
+    emailInput.value = "";
 });
 
 emailInput.addEventListener("invalid", (e) => {
-  e.preventDefault();
-  emailInput.blur();
-  form.classList.add("error");
+    e.preventDefault();
+    emailInput.blur();
+    form.classList.add("error");
 });
 
 emailInput.addEventListener("focus", (e) => {
-  form.classList.remove("error");
+    form.classList.remove("error");
 });
 
 btnDismiss.addEventListener("click", () => {
-  subscriptionCard.classList.remove("hide");
-  messageCard.classList.remove("show");
+    subscriptionCard.classList.remove("hide");
+    messageCard.classList.remove("show");
 });

@@ -3,12 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./assets/favicon-32x32.png"
-    />
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,79 +11,78 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="./main.css" />
-    <title>
-      Frontend Mentor | Newsletter sign-up form with success message
-    </title>
+    <title>Frontend Mentor | Newsletter sign-up form with success message</title>
   </head>
   <body>
-    <div class="subscription-wrapper">
-      <picture class="subscription-hero">
-        <source
-          class="desktop"
-          srcset="./assets/illustration-sign-up-desktop.svg"
-          media="(min-width: 768px)"
-        />
-        <img
-          class="mobile"
-          src="./assets/illustration-sign-up-mobile.svg"
-          alt="illustration-sign-up-mobile"
-        />
-      </picture>
+    <main class="main__container">
+      <div class="subscription">
+        <picture class="subscription__image">
+          <source srcset="./assets/illustration-sign-up-desktop.svg" media="(min-width: 48em)" />
+          <img src="./assets/illustration-sign-up-mobile.svg" alt="Sign up illustration" />
+        </picture>
+        <section class="subscription__content">
+          <h1 class="subscription__title">Stay updated!</h1>
+          <figure class="subscription__benefit">
+            <figcaption class="subscription__benefit__caption">
+              Join 60,000+ product managers receiving monthly updates on:
+            </figcaption>
+            <ul class="subscription__benefit__list">
+              <li class="subscription__benefit__item">
+                <img
+                  class="subscription__benefit__item--icon"
+                  src="./assets/icon-list.svg"
+                  alt="Checked icon"
+                />
+                <p class="subscription__benefit__item--description" class="text-base">
+                  Product discovery and building what matters
+                </p>
+              </li>
+              <li class="subscription__benefit__item">
+                <img
+                  class="subscription__benefit__item--icon"
+                  src="./assets/icon-list.svg"
+                  alt="Checked icon"
+                />
+                <p class="subscription__benefit__item--description" class="text-base">
+                  Measuring to ensure updates are a success
+                </p>
+              </li>
+              <li class="subscription__benefit__item">
+                <img
+                  class="subscription__benefit__item--icon"
+                  src="./assets/icon-list.svg"
+                  alt="Checked icon"
+                />
+                <p aria-colspan="subscription__benefit__item--description" class="text-base">
+                  And much more!
+                </p>
+              </li>
+            </ul>
+          </figure>
 
-      <section class="subscription-content">
-        <h2 class="heading-lg">Stay updated!</h2>
-        <p class="text-base">
-          Join 60,000+ product managers receiving monthly updates on:
+          <form class="subscription__form" action="">
+            <label for="email-input"
+              >Email address <span class="error-msg">Valid email required</span></label
+            >
+            <input placeholder="email@company.com" type="email" id="email-input" />
+            <button class="btn--primary" type="submit">
+              <span> Subscribe to monthly newsletter </span>
+            </button>
+          </form>
+        </section>
+      </div>
+
+      <article class="appreciation">
+        <img class="appreciation__image" src="./assets/icon-success.svg" alt="Checked icon large" />
+        <h2 class="appreciation__title">Thanks for subscribing!</h2>
+        <p class="appreciation__description">
+          A confirmation email has been sent to <b>ash@loremcompany.com</b>. Please open it and
+          click the button inside to confirm your subscription.
         </p>
-        <ul>
-          <li>
-            <img src="./assets/icon-list.svg" alt="list-item-icon" />
-            <p class="text-base">Product discovery and building what matters</p>
-          </li>
-          <li>
-            <img src="./assets/icon-list.svg" alt="list-item-icon" />
-            <p class="text-base">Measuring to ensure updates are a success</p>
-          </li>
-          <li>
-            <img src="./assets/icon-list.svg" alt="list-item-icon" />
-            <p class="text-base">And much more!</p>
-          </li>
-        </ul>
+        <button class="appreciation__dismiss btn--primary"><span> Dismiss message </span></button>
+      </article>
 
-        <form class="subscription-form" action="#">
-          <label for="email-input"
-            >Email address
-            <span id="email-input-error">Valid email required</span></label
-          >
-          <input
-            placeholder="email@company.com"
-            type="email"
-            name="email-address-input"
-            id="email-input"
-          />
-          <button class="btn-primary" type="submit">
-            Subscribe to monthly newsletter
-          </button>
-        </form>
-      </section>
-    </div>
-
-    <div class="message-card">
-      <section>
-        <img src="./assets/icon-success.svg" alt="icon-success" />
-
-        <h2 class="heading-lg">Thanks for<br />subscribing!</h2>
-        <p class="text-base">
-          A confirmation email has been sent to <b>ash@loremcompany.com</b>.
-          Please open it and click the button inside to confirm your
-          subscription.
-        </p>
-      </section>
-      <button class="btn-primary btn-dismiss" type="button">
-        Dismiss message
-      </button>
-    </div>
-
-    <script type="text/javascript" src="./main.js"></script>
+      <script src="./main.js"></script>
+    </main>
   </body>
 </html>
